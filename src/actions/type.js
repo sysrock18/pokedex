@@ -1,1 +1,2 @@
 export const SET_POKEMON = 'SET_POKEMON'
+export const GET_POKEMONS = 'GET_POKEMONS'
