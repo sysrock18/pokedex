@@ -7,11 +7,14 @@ import './styles.css';
 import { getPokemonsDetails } from '../../actions';
 // import { connect } from 'react-redux';
 import { useDispatch } from 'react-redux';
+import Loader from '../../components/Loader';
+import { useSelector } from 'react-redux';
 // import axios from 'axios';
 
 // function Home({ list, setPokemons }) {
 function Home() {
   const dispatch = useDispatch()
+  const loading = useSelector(state => state.get('loading'))
 
   useEffect(() => {
     // getPokemons().then(res => {
@@ -30,6 +33,7 @@ function Home() {
   return (
     <div className='Home'>
       <Searcher />
+      {loading && <Loader />}
       <PokemonList />
     </div>
   );
