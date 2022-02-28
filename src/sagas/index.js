@@ -11,7 +11,6 @@ function* callPokemonsDetails(action) {
       put(setPokemon(pokemons)),
       put(toggleLoader())
     ])
-    // yield put(setPokemon(pokemons))
   } catch (e) {
     console.error(e)
     put(toggleLoader())
