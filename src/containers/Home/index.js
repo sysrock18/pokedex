@@ -4,17 +4,18 @@ import PokemonList from '../../components/PokemonList';
 import './styles.css';
 // import { getPokemons } from '../../api/getPokemons';
 // import { getPokemonsDetails, setPokemon } from '../../actions';
-import { getPokemonsDetails } from '../../actions';
+// import { getPokemonsDetails } from '../../actions';
 // import { connect } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import Loader from '../../components/Loader';
 import { useSelector } from 'react-redux';
+import { fetchPokemons } from '../../slices/pokemon';
 // import axios from 'axios';
 
 // function Home({ list, setPokemons }) {
 function Home() {
   const dispatch = useDispatch()
-  const loading = useSelector(state => state.loading)
+  const loading = useSelector(state => state.ui.loading)
 
   useEffect(() => {
     // getPokemons().then(res => {
@@ -27,7 +28,8 @@ function Home() {
     //     dispatch(setPokemon(pokeData))
     //   })
     // })
-    dispatch(getPokemonsDetails())
+    // dispatch(getPokemonsDetails())
+    dispatch(fetchPokemons())
   }, [])
 
   return (

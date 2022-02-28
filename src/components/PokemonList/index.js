@@ -5,7 +5,7 @@ import PokemonCard from './PokemonCard';
 import './styles.css';
 
 const PokemonList = () => {
-  const pokemons = useSelector(state => state.list)
+  const pokemons = useSelector(state => state.pokemon.list)
 
   return (
     <div className='wrapper'>

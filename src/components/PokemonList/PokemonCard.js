@@ -1,12 +1,13 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Image, Label, Divider, Grid, Icon } from 'semantic-ui-react';
-import { toggleFavorite } from '../../actions';
+import { toggleFavorite } from '../../slices/pokemon';
+// import { toggleFavorite } from '../../actions';
 import { FAV_COLOR, MAIN_COLOR } from '../../utils/constants';
 import './styles.css';
 
 const PokemonCard = ({ pokemon }) => {
-  const favorites = useSelector(state => state.favorites)
+  const favorites = useSelector(state => state.pokemon.favorites)
   const dispatch = useDispatch()
 
   const handleFavorite = () => dispatch(toggleFavorite(pokemon.id))
