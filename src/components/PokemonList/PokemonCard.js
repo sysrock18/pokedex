@@ -6,7 +6,7 @@ import { FAV_COLOR, MAIN_COLOR } from '../../utils/constants';
 import './styles.css';
 
 const PokemonCard = ({ pokemon }) => {
-  const favorites = useSelector(state => state.get('favorites')).toJS()
+  const favorites = useSelector(state => state.favorites)
   const dispatch = useDispatch()
 
   const handleFavorite = () => dispatch(toggleFavorite(pokemon.id))

@@ -14,7 +14,7 @@ import { useSelector } from 'react-redux';
 // function Home({ list, setPokemons }) {
 function Home() {
   const dispatch = useDispatch()
-  const loading = useSelector(state => state.get('loading'))
+  const loading = useSelector(state => state.loading)
 
   useEffect(() => {
     // getPokemons().then(res => {
